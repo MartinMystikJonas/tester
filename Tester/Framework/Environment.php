@@ -110,7 +110,7 @@ class Environment
 	public static function skip($message = '')
 	{
 		self::$checkAssertions = FALSE;
-		echo "\nSkipped:\n$message\n";
+		echo "\nSkipped:\n" . strtr($message, "\r\n", "  ") . "\n";
 		die(Runner\Job::CODE_SKIP);
 	}
 
